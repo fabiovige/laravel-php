@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group">
                     <label for="confirme_senha">Data de cadastro: </label>
-                    {{ $usuario->created_at->format('d/m/Y') }}
+                    {{ $usuario->created_at->format('d/m/Y H:i') }}
                 </div>
                 <div class="form-group">
                     <input class="btn btn-primary" type="submit" value="Salvar">
