@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Sao_Paulo',
 
     /*
     |--------------------------------------------------------------------------
@@ -154,11 +154,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        FavioVige\Providers\AppServiceProvider::class,
+        FavioVige\Providers\AuthServiceProvider::class,
+        // FavioVige\Providers\BroadcastServiceProvider::class,
+        FavioVige\Providers\EventServiceProvider::class,
+        FavioVige\Providers\RouteServiceProvider::class,
 
     ],
 
