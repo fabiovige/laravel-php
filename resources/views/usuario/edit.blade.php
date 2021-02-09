@@ -19,7 +19,7 @@
             </button>
         </div>
 
-        <form id="commentForm" >
+        <form id="formUsuario" >
             @csrf
             @method('put')
             <fieldset>
@@ -71,7 +71,6 @@
 
         $(document).ready(function() {
             $('#data_nascimento').mask('00/00/0000');
-
         });
 
         $.validator.setDefaults({
@@ -79,15 +78,14 @@
 
                 $.ajax({
                     url: "{{ route('usuarios.update', ['id'=>$usuario->id]) }}",
-                    type: 'post',
+                    type: 'put',
                     dataType: 'json',
-                    data: $('#commentForm').serialize(),
+                    data: $('#formUsuario').serialize(),
 
                     cache: false,
                     beforeSend: function() {
                     },
                     success: function(response) {
-                        console.log(response.statusCode);
                         if(response.statusCode == true){
                             $('#success').show();
 
@@ -105,11 +103,8 @@
         });
 
         $(document).ready(function() {
-            // validate the comment form when it is submitted
-            //$("#commentForm").validate();
-
             // validate signup form on keyup and submit
-            $("#commentForm").validate({
+            $("#formUsuario").validate({
                 rules: {
                     nome: "required",
                     email: {

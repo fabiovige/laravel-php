@@ -101,6 +101,10 @@ class UsuarioController extends Controller
      */
     public function destroy(Usuario $usuario)
     {
-        //
+        $delete = $usuario->delete();
+
+        return json_encode(array(
+            "statusCode" => $delete
+        ));
     }
 }

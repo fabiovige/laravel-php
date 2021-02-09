@@ -19,28 +19,28 @@
             </button>
         </div>
 
-        <form id="commentForm" >
+        <form id="formUsuario" >
             @csrf
             <fieldset>
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input id="nome" name="nome" minlength="2" type="text" class="form-control" value="fabio" required>
+                    <input id="nome" name="nome" minlength="2" type="text" class="form-control" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="email">E-Mail</label>
-                    <input id="email" type="email" name="email" class="form-control" value="fabiovige@gmail.com" required>
+                    <input id="email" type="email" name="email" class="form-control" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="data_nascimento">Data de nascimento</label>
-                    <input id="data_nascimento" type="text" name="data_nascimento" value="03/02/1976" class="form-control" >
+                    <input id="data_nascimento" type="text" name="data_nascimento" value="" class="form-control" >
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha</label>
-                    <input id="senha" type="password" name="senha" class="form-control" value="12345678" required>
+                    <input id="senha" type="password" name="senha" class="form-control" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="confirme_senha">Confirme a senha</label>
-                    <input id="confirme_senha" type="password" name="confirme_senha" class="form-control" value="12345678" required>
+                    <input id="confirme_senha" type="password" name="confirme_senha" class="form-control" value="" required>
                 </div>
                 <div class="form-group">
                     <input class="btn btn-primary" type="submit" value="Salvar">
@@ -97,11 +97,7 @@
         });
 
         $(document).ready(function() {
-            // validate the comment form when it is submitted
-            //$("#commentForm").validate();
-
-            // validate signup form on keyup and submit
-            $("#commentForm").validate({
+            $("#formUsuario").validate({
                 rules: {
                     nome: "required",
                     email: {

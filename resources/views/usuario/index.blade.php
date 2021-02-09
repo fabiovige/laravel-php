@@ -27,7 +27,7 @@
                         <td>{{ $usuario->created_at }}</td>
                         <td class="text-right">
                             <a href="{{ route('usuarios.edit', ['id'=>$usuario->id]) }}" class="btn btn-info text-white rounded"><i class="fas fa-edit"></i> Editar</a>
-                            <a href="" attr="confirmar" class="btn btn-danger text-white rounded"><i class="fas fa-trash-alt"></i> Excluir</a>
+                            <button  rel="{{ route('usuarios.destroy', ['id'=>$usuario->id] ) }}" id="{{ $usuario->id }}" class="btn btn-danger text-white rounded"><i class="fas fa-trash-alt"></i> Excluir</button>
                         </td>
                     </tr>
                 @endforeach
@@ -50,7 +50,32 @@
 
 
     <script type="text/javascript">
+        $("button").click(function(){
+            var url = $(this).attr('rel');
+            var id = $(this).attr('id');
 
+
+            if (confirm('Confirmar exclusão de usuário?')) {
+                $.ajax({
+                    url: url,
+                    type: 'delete',
+                    dataType: 'json',
+                    data: { id: id, _token: '{{csrf_token()}}' },
+                    cache: false,
+                    beforeSend: function() {
+                    },
+                    success: function(response) {
+                        window.location = '';
+                    },
+                    complete: function() {
+                    },
+                    error: function() {
+                    }
+                });
+            }
+
+
+        });
     </script>
 
 
