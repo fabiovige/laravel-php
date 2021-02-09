@@ -73,7 +73,7 @@
                     url: "{{ route('usuarios.store') }}",
                     type: 'post',
                     dataType: 'json',
-                    data: $('#commentForm').serialize(),
+                    data: $('#formUsuario').serialize(),
 
                     cache: false,
                     beforeSend: function() {
