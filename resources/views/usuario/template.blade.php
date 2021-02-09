@@ -14,9 +14,6 @@
 @yield('content')
 
 <script src="{{ asset('/js/app.js') }}"></script>
-<script src="{{ asset('/js/jquery.mask.min.js') }}"></script>
-<script src="{{ asset('/js/jquery.validate.min.js') }}"></script>
-
 
 @yield('script')
 
