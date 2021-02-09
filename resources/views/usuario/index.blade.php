@@ -24,7 +24,7 @@
                     <tr>
                         <td>{{ $usuario->nome }}</td>
                         <td>{{ $usuario->email }}</td>
-                        <td>{{ $usuario->created_at }}</td>
+                        <td>{{ $usuario->created_at->format('d/m/Y H:i') }}</td>
                         <td class="text-right">
                             <a href="{{ route('usuarios.edit', ['id'=>$usuario->id]) }}" class="btn btn-info text-white rounded"><i class="fas fa-edit"></i> Editar</a>
                             <button  rel="{{ route('usuarios.destroy', ['id'=>$usuario->id] ) }}" id="{{ $usuario->id }}" class="btn btn-danger text-white rounded"><i class="fas fa-trash-alt"></i> Excluir</button>
